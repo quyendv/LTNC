@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int chiadu(int a, int n, int m)
+{
+    // if (n == 1) return a % m;
+    // if (n % 2 == 0) {
+
+    //     return ((chiadu(a, n / 2, m) % m) * (chiadu(a, n / 2, m) % m)) % m;
+    // }
+    // else return (a * (chiadu(a, n / 2, m) % m) * (chiadu(a, n / 2, m) % m)) % m;
+    int res = 1;
+    for (int i = 1; i <= n; i++)
+        res = res * (a % m) % m;
+    return res;
+}
+
+int main()
+{
+    int a, n, m;
+    cin >> a >> n >> m;
+    cout << chiadu(a, n, m);
+    // cout << ((long long)pow(a, n) % m);
+    return 0;
+}
